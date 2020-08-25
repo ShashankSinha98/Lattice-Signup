@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Lattice Signup</string>
+    <string name="full_name">Full Name</string>
+    <string name="address">Address</string>
+    <string name="email">Email</string>
+    <string name="number">Number</string>
+    <string name="signup">Sign Up</string>
+    <string name="password">Password</string>
 </resources>
