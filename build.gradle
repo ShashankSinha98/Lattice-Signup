@@ -33,4 +33,5 @@ ext {
     coroutines = '1.3.4'
     materialDesignVersion = '1.2.0'
     gsonVersion = '2.8.5'
+    googlePlayServicesVersion = '15.0.0'
 }

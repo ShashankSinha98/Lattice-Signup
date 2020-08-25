@@ -1,6 +1,9 @@
 package com.example.latticesignup
 
+import android.Manifest
 import android.content.Intent
+import android.content.pm.PackageManager
+import android.location.Location
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -9,15 +12,19 @@ import android.view.View
 import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.textfield.TextInputLayout
 import com.google.gson.Gson
+import kotlinx.android.synthetic.main.activity_signup.*
 import java.util.regex.Pattern
 
 
 class SignupActivity : AppCompatActivity() {
 
-    private val TAG : String = "xlr8"
+
+    private lateinit var userViewModel : UserViewmodel
 
     private lateinit var fullname : TextInputLayout
     private lateinit var address : TextInputLayout
@@ -32,7 +39,8 @@ class SignupActivity : AppCompatActivity() {
     private var numberValidated = false
     private var passwordValidated = false
 
-    private lateinit var userViewModel : UserViewmodel
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,8 +61,13 @@ class SignupActivity : AppCompatActivity() {
 
         userViewModel = ViewModelProvider(this).get(UserViewmodel::class.java)
 
-    }
 
+        //getLocationPermission()
+
+
+
+
+    }
 
 
     private val nameWatcher = object : TextWatcher{
@@ -199,14 +212,11 @@ class SignupActivity : AppCompatActivity() {
         val user = User(name,address,email,number,password)
         val userJson = Gson().toJson(user)
 
-        //Toast.makeText(this,userJson,Toast.LENGTH_LONG).show()
-        Log.d(TAG, userJson)
 
         val jsonData = UserJson(userJson)
         userViewModel.insert(jsonData)
         val intent = Intent(this,MainActivity::class.java)
         startActivity(intent)
-
 
     }
 
@@ -215,5 +225,8 @@ class SignupActivity : AppCompatActivity() {
         val intent = Intent(this,MainActivity::class.java)
         startActivity(intent)
     }
+
+
+
 
 }
