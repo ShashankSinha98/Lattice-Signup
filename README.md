@@ -1,3 +1,3 @@
 # Lattice-Signup
 
-Simple Signup page and users signed list in kotlin using Room, MVVM architecture.
+Simple Signup page and users list in kotlin using Room and MVVM architecture.
