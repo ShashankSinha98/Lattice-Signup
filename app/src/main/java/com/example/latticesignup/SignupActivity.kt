@@ -18,6 +18,9 @@ import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.textfield.TextInputLayout
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_signup.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import java.util.regex.Pattern
 
 
@@ -60,12 +63,7 @@ class SignupActivity : AppCompatActivity() {
         password.editText?.addTextChangedListener(passwordWatcher)
 
         userViewModel = ViewModelProvider(this).get(UserViewmodel::class.java)
-
-
-        //getLocationPermission()
-
-
-
+        
 
     }
 

@@ -6,4 +6,5 @@
     <string name="number">Number</string>
     <string name="signup">Sign Up</string>
     <string name="password">Password</string>
+    <string name="google_maps_key">AIzaSyBGwDZv6UmPyPi8iwsnRMnSTxIGofNh2z0</string>
 </resources>
